@@ -7,6 +7,7 @@ const grid = document.getElementById('grid')
 button.addEventListener("click", makeGrid);
 
 function makeGrid() {
+    console.log(color.value)
     grid.innerHTML = "";
     for (let i = 0; i < rows.value; i++) {
         let rowDiv = document.createElement('div')
@@ -17,13 +18,14 @@ function makeGrid() {
             box.classList.add('box');
             box.style.backgroundColor = color.value;
             rowDiv.appendChild(box);
+            box.addEventListener("click", changeColor);
 
         }
     }
 }
 
 function changeColor(event) {
+    event.target.style.backgroundColor = color.value
 
 
-    
 }
